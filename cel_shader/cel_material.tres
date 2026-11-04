@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bb5k1m02k6fbi"]
+
+[ext_resource type="Shader" uid="uid://bqqp101rihqdq" path="res://cel_shader/outline.gdshader" id="1_0vlss"]
+[ext_resource type="Shader" uid="uid://v86qsr1qjwdt" path="res://cel_shader/cel-shader-base.gdshader" id="2_g52p7"]
+[ext_resource type="Texture2D" uid="uid://ipehj0e4sb3e" path="res://default_tree_pixelated_leaves.png" id="3_g52p7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aita7"]
+render_priority = 0
+shader = ExtResource("1_0vlss")
+
+[resource]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_aita7")
+shader = ExtResource("2_g52p7")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/base_texture = ExtResource("3_g52p7")
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)

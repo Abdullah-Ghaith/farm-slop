@@ -1,0 +1,131 @@
+[gd_scene format=4 uid="uid://bbbyoybhuqb2r"]
+
+[ext_resource type="PackedScene" uid="uid://b1k7ax2o7p77b" path="res://default_tree_pixelated.glb" id="1_m401n"]
+[ext_resource type="Shader" uid="uid://bqqp101rihqdq" path="res://cel_shader/outline.gdshader" id="2_frxls"]
+[ext_resource type="Texture2D" uid="uid://ipehj0e4sb3e" path="res://default_tree_pixelated_leaves.png" id="2_qshf0"]
+[ext_resource type="Texture2D" uid="uid://cwxay6cmkbjqb" path="res://default_tree_pixelated_wood.png" id="3_frxls"]
+[ext_resource type="Shader" uid="uid://v86qsr1qjwdt" path="res://cel_shader/cel-shader-base.gdshader" id="3_ponpu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aita7"]
+render_priority = 0
+shader = ExtResource("2_frxls")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5jl6"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_aita7")
+shader = ExtResource("3_ponpu")
+shader_parameter/color = Color(0.86036915, 0.8603692, 0.8603692, 1)
+shader_parameter/base_texture = ExtResource("2_qshf0")
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bs78j"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_aita7")
+shader = ExtResource("3_ponpu")
+shader_parameter/color = Color(0.67481464, 0.67481464, 0.6748146, 1)
+shader_parameter/base_texture = ExtResource("3_frxls")
+shader_parameter/specular = Color(0.3, 0.3, 0.3, 0.5)
+shader_parameter/fresnel = Color(0.2, 0.2, 0.2, 0.3)
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ds8b1"]
+resource_name = "leafsGreen"
+albedo_texture = ExtResource("2_qshf0")
+metallic = 1.0
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v2wf1"]
+_surfaces = [{
+"aabb": AABB(-0.37750003, 0.8003875, -0.3269245, 0.75500005, 0.9074999, 0.653849),
+"format": 34896613377,
+"index_count": 120,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAwABAAAAAwAAAAQAAwAEAAUABgAEAAAABwAGAAAACAADAAUABQAHAAgABwAAAAkACAAHAAkACgAJAAAACQALAAgACwAJAAoADAADAAgAAwAMAAIACAALAA0ACgANAAsACAAOAAwADQAOAAgAAgAMAA8ADwAMAA4AEAAOAA0ADgAQAA8ADQARABAADQAKABIAEgARAA0AEwAQABEAEwARABIADwAQABMAFAATABIAFQAPABMAFQATABQADwAVAAIAFgAUABIAFQAUABYAEgAKABYAFgACABUAAAAWAAoAAgAWAAAA"),
+"name": "leafsGreen",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 23,
+"vertex_data": PackedByteArray("6rEAACgcAADW4wAA/38AAP//uSv/fwAA6rEAANbjAADQjgAAG5EAAC5xAAAbkQAA0I4AAONuAAAucQAA424AABROAADW4wAAFE4AACgcAAD/P7krAAAAACgcAAD/fwAA/7+5K///AAAAALkr/38AAP8/uSv//wAARrF2xY7iAAC4TnbFjuIAAHAddsX/fwAAuE52xXAdAAD/f////38AAEaxdsVwHQAAjuJ2xf9/AAD/v7krAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u4oq2"]
+resource_name = "default_tree_pixelated_Mesh tree_default_001"
+_surfaces = [{
+"aabb": AABB(-0.37750003, 0.8003875, -0.3269245, 0.75500005, 0.9074999, 0.653849),
+"attribute_data": PackedByteArray("EOcC3dKQAt3SkC6h0pAuoWP/LqEQ5wLdVvsuocSMLqHEjALdxIwC3QLjAt1W+y6hk8HMgaih5cCTwf//BdgVtumhquKW6GaJUIC/ikTCquLOxVr9NrWGm52ykYDkjsr04/vK9JHVhptqvmT8ar4yfvmnG8hW3ku9/38x/v///3///zH+LO8uoZqALqHtmALd7ZgC3SzvAt0s7y6hE9wx/r+ZMf4Bqf9/E9z/fwGp/3+/mTH+E9wx/hPc/3/91v9/66P/f+ujMf4+5jH+/38x/v///3///zH+C6H/fzyYMf7S5DH+A9z/f0H1MKUX6QDZ2ZIA2a+GMKXtmALdmoAuoSzvLqEs7y6hLO8C3e2YAt29ijCl5pYA2SXtANlP+TCls+Mx/mChMf5gof9/ctT/f/9/Mf7///9///8x/vPe/3/C5zH+K5sx/vqj/3//fzH+////f///Mf7/fzH+////f///Mf7/fzH+////f///Mf4="),
+"format": 34896613399,
+"index_count": 120,
+"index_data": PackedByteArray("AAABAAIAAwAEAAUABgAHAAgACQAKAAsADAANAA4ADgAPAAwAEAARABIAEAATABEAEwAUABEAFQAWABcAFwAYABUAGAAZABUAGgAbABwAGgAdABsAHgAfACAAIQAiACMAJAAlACYAJwAoACkAKQAqACcAKwAsAC0ALQAuACsALwAwADEAMQAyAC8AMwA0ADUANgA3ADgAOAA5ADYAOgA7ADwAPAA9ADoAPgA/AEAAQQBCAEMARABFAEYARgBHAEQASABJAEoASgBLAEgATABNAE4ATwBQAFEAUQBSAE8AUwBUAFUAVgBXAFgAWQBaAFsA"),
+"material": SubResource("StandardMaterial3D_ds8b1"),
+"name": "leafsGreen",
+"primitive": 3,
+"uv_scale": Vector4(2, 2.028564, 0, 0),
+"vertex_count": 92,
+"vertex_data": PackedByteArray("6rEAACgcbdbW4wAA/39t1v//uSv/f23W//+5K/9/btb/v7krAABu1uqxAAAoHG7W/z+5KwAATA8AALkr/39MDygcAAD/f0wPKBwAAP9/TA8UTgAAKBxMD/8/uSsAAEwPFE4AACgc/z8oHAAA/3//PxROAADW4/8/LnEAAONu/z8ucQAA427/P+qxAAAoHPM/FE4AACgc/z/QjgAA426KPtCOAAAbkag7LnEAABuRnj4ucQAA427gOxROAADW4/Y/6rEAANbj/z/QjgAAG5H/P+qxAADW4/8/6rEAACgc/z/QjgAAG5H/P9bjAAD/f/8/RrF2xXAd////f////3///7hOdsVwHf//AAC5K/9/zAj/P7kr///MCBROAADW48wIFE4AANbjzAgoHAAA/3/MCAAAuSv/f8wI//+5K/9//qr/v7kr///+qkaxdsWO4v6qjuJ2xf9//qq4TnbFjuLKAv8/uSv//8oCAAC5K/9/ygJwHXbF/3/KArhOdsVwHdYEcB12xf9/1gQAALkr/3/WBP8/uSsAANYE/3////9/z/pwHXbF/3/P+rhOdsVwHc/6uE52xXAdlgX/P7krAACWBf+/uSsAAJYFRrF2xXAdlgX/v7kr//+ykeqxAADW47KRFE4AANbjspH/P7kr//+ykeqxAADW496t/7+5K///3q3//7kr/3/erf//uSv/f9+t1uMAAP9/363qsQAA1uPfrf8/uSsAALMRFE4AACgcsxHqsQAAKByzEf+/uSsAALMR/7+5KwAAcNX//7kr/39w1Y7idsX/f3DVRrF2xXAdcNWO4nbF/3+b60axdsWO4pvr/3////9/m+tGsXbFjuKVhf+/uSv//5WF/z+5K///lYW4TnbFjuKVhUaxdsWO4gjWuE52xY7iCNb/f////38I1v9/////f5vruE52xY7im+twHXbF/3+b647idsX/f8LZ/3////9/wtlGsXbFcB3C2eZzDSHmcw0h5nMNIeZzDSHmcw0h5nMNIeo0bnbqNG526jRuduo0bnbqNG526jRudgAA/38AAP9/AAD/fwAA/39oANCAKQRSiLEAYoHLEZajIRpCtHAR36KuGVyzpwNOhwAA/38AAP9/AAD/fwAA/38AAP9/AAD/f/9/+db/f/nW/3/51uZWSXDmVklw5lZJcOVWSXDlVklw5VZJcDeU0Qw3lNEMN5TRDDeU0Qyn+uUsp/rlLKf65Syn+uUs2/woT9v8KE/b/ChP2/woTx3TFigd0xYoHdMWKP///3////9/////f////38AAP9/AAD/fwAA/38AAP9/eWElMHlhJTB5YSUweWElMHlhJTB5YSUwAAD/fwAA/38AAP9/AAD/f4GMlASBjJQEgYyUBIGMlAQ5LyAPOS8gDzkvIA////9/////f////3////9/Ct4LFgreCxYK3gsW33A4r99wOK/fcDivmbb8E5m2/BOZtvwT")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_v2wf1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1qk0t"]
+resource_name = "woodBark"
+albedo_texture = ExtResource("3_frxls")
+metallic = 1.0
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_qaexx"]
+_surfaces = [{
+"aabb": AABB(-0.12218278, 0, -0.13670804, 0.26664624, 0.8003875, 0.27166772),
+"format": 34896613377,
+"index_count": 222,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAAAAMAAQAAAAQAAwAFAAQABQADAAIABAAFAAYAAgAGAAUABgAHAAQABAAHAAEABwAGAAgAAQAHAAgACQAGAAIACQAIAAYAAgABAAoACgAJAAIACwAKAAEAAQAIAAsADAAJAAoACQAMAA0ADgAJAA0ADwAMAAoAEAAPAAoADQAQAA4ADAAPABEAEQAPABAAEQASAAwADAASABMAEwASABEAEwANAAwAEQAUABMADQATABQAEAAUABEAFAAQAA0AEAAKABUAFQAOABAAFgAVAAoACgALABYAFwAOABUAFQAWABcAGAAWAAsAGQAXABYAFgAYABkAFwAaAA4AGgAbAA4AGAAOABsAGAAbABkAHAAbABoAGQAbABwAHQAaABcAGgAdABwAHAAeABkAFwAZAB4AHgAcAB0AFwAfAB0AHQAfAB4AHgAfABcACwAgABgAIAAhABgACAAYACEACwAiACAACwAIACIAIwAgACIAIQAgACMAJAAiAAgAIQAkAAgAJQAiACQAIgAlACMAJAAmACUAIwAlACYAJgAkACEAIwAnACEAIQAnACYAJgAnACMA"),
+"name": "woodBark",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray("gmDYrgAAAAAOWYKr008AAEOQgqvTTwAAz4jYrgAAAACCYEO8PQEAAM+IQ7w9AQAAQ5DkvYdRAAAOWeS9h1EAAFhL//+jVwAAQp///6NXAABgtwAA9z8AADozAAD3PwAA7Kz5btteAADsrPluZZcAAEKf//8AqgAAuq7LW9teAAC6rstbZZcAAP//z18vaAAAyf6pbC9oAADJ/qlsEY4AAP//z18RjgAAYLcAAKzBAAA6MwAArMEAAG+KlT36uwAAWEv//wCqAAChVZU9+rsAAG+KK09augAAoVUrT1q6AABYXv5M6P4AALiB/kzo/gAAWF42Qf//AAC4gTZB//8AAM1HadrwkwAAPEmY6fCTAADNR2naLWcAAAAA6NzKjgAAPEmY6S1nAAAAAOjcU2wAABkBmuhTbAAAGQGa6MqOAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_53b1w"]
+resource_name = "default_tree_pixelated_Mesh tree_default"
+_surfaces = [{
+"aabb": AABB(-0.12218278, 0, -0.13670804, 0.26664624, 0.8003875, 0.27166772),
+"attribute_data": PackedByteArray("HeNIpMThzLHD68yxaupIpOfefIuk3g+TpNHQkdfR+4vn3lS919F1vNfRn7bn3sC1teobxCXhG8S54p/PIemfz/nvc6qp70ihef4YorP+yqjY8v//6tr//7XqR+F67lCAJeFH4bXqgthI31CAJeGC2KzPl9l5z3jfBdxH4VLcgti36vuLW+T7i1vk0JG36tCR9PClyEfxNtL//zXQxv/Myfja//9W31CAxeI20uby///F4qXIM+020ojuUIAz7aXIpN7AtaTRn7ak0XW8pN5UvQXcR+F5z3jfrM+X2VLcgtjY8hyv6tocr+raEsXY8hLFpNHQkaTeD5Pn3nyL19H7i3n+GKKp70ih+e9zqrP+yqjq2v//2PL//8Thc6pI31CAw+tzqsThSKF67lCAw+tIocPrFbLE4RWyHeN+pGrqfqS54nDPJeHVw7Xq1cMh6XDPiO5QgFbfUIBo43yLqut8i6rrD5No4w+T5vL///ja//8d4xiiHePKqGrqyqhq6hiiIemX2SHpeN+54njfueKX2f//67VH8Ve0R/Hpvf//Vbz//zXQR/E20vTwpcjG/8zJxv9VvPTw6b308Fe0xv/rtXvrNdB+5DXQfuTMyXvrzMk="),
+"format": 34896613399,
+"index_count": 222,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAWABUAFgAZABcAFQAaABgAGQAbABcAGgAbABgAGgAXABsAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAqACkAKgAtACsAKQAuACwALQAvACsALgAvACwALwAuACsAMAAxADIAMgAzADAANAA1ADYANgA3ADQAOAA5ADoAOgA7ADgAPAA9AD4APgA/ADwAQABBAEIAQgBDAEAARABFAEYARgBHAEQASABGAEUARgBJAEcARQBKAEgASQBLAEcASgBLAEgASgBHAEsATABNAE4ATgBPAEwAUABRAFIAUgBTAFAAVABVAFYAVgBXAFQAVwBYAFQAWQBWAFUAWgBUAFgAWgBYAFkAWgBZAFUAVQBbAFoAXABdAF4AXgBfAFwAYABhAGIAYgBjAGAAZABlAGYAZgBnAGQAaABpAGoAagBrAGgAbABtAG4AbgBvAGwAcABxAHIAcgBzAHAA"),
+"material": SubResource("StandardMaterial3D_1qk0t"),
+"name": "woodBark",
+"primitive": 3,
+"uv_scale": Vector4(1.2052096, 2.0049362, 0, 0),
+"vertex_count": 116,
+"vertex_data": PackedByteArray("gmDYrgAAAzsOWYKr008DO0OQgqvTTwM7z4jYrgAAAzs8SZjp8JP1gs1Hadrwk/WCAADo3MqO9YIZAZroyo71gjxJmOnwkwPAGQGa6MqOA8AZAZroU2wDwDxJmOktZwPAb4qVPfq7WkahVZU9+rtaRlheNkH//1pGuIE2Qf//WkZDkIKr00+0w0OQ5L2HUbTDz4hDvD0BtMPPiNiuAAC0w2C3AACswUeBOjMAAKzBR4FvipU9+rtHgUKf//8AqkeBoVWVPfq7R4FviitPWrpHgVhL//8AqkeBoVUrT1q6R4FYXv5M6P4aAFheNkH//xoAoVWVPfq7GgChVStPWroaABkBmuhTbOcAGQGa6MqO5wAAAOjcyo7nAAAA6NxTbOcA7Kz5btteJQC6rstb214lAP//z18vaCUAyf6pbC9oJQBgtwAArMEBwEKf//8AqgHAuq7LW2WXAcBgtwAA9z8BwOys+W5llwHAuq7LW9teAcBCn///o1cBwOys+W7bXgHAzUdp2i1n4z8AAOjcU2zjPwAA6NzKjuM/zUdp2vCT4z9vipU9+rvturiBNkH//+26uIH+TOj+7bpviitPWrrtumC3AAD3P/8/OjMAAPc//z86MwAArMH/P2C3AACswf8/AADo3FNsFwDNR2naLWcXADxJmOktZxcAGQGa6FNsFwCCYEO8PQEWAA5Z5L2HURYADlmCq9NPFgCCYNiuAAAWADozAAD3P0cBYLcAAPc/RwEOWYKr009HAVhL//+jV0cBQ5CCq9NPRwEOWeS9h1FHAUKf//+jV0cBQ5DkvYdRRwFDkOS9h1Fuwg5Z5L2HUW7CgmBDvD0BbsLPiEO8PQFuwlhe/kzo/jO8oVUrT1q6M7xviitPWrozvLiB/kzo/jO8WEv//6NX5wBYS///AKrnADxJmOnwk+cAPEmY6S1n5wDNR2naLWfnAM1Hadrwk+cAOjMAAPc/5wA6MwAArMHnAIJgQ7w9AUcBgmDYrgAARwHPiNiuAABHAc+IQ7w9AUcBuIH+TOj+R4G4gTZB//9HgVheNkH//0eBWF7+TOj+R4H//89fL2jHP7quy1vbXsc/uq7LW2WXxz///89fEY7HP///z18RjriEuq7LW2WXuITsrPluZZe4hMn+qWwRjriEyf6pbBGOEcDsrPluZZcRwOys+W7bXhHAyf6pbC9oEcD//89fL2gBwP//z18RjgHAyf6pbBGOAcDJ/qlsL2gBwAAA/38AAP9/AAD/fwAA/3/rg+7764Pu++uD7vvrg+77dP0ThXT9E4V0/ROFdP0ThQAA/38AAP9/AAD/fwAA/39agCsAWoArAFqAKwBagCsA////f/7//3/+//5/////f/7//3/+//1//v//f////3/c//M73P/zO9z/8zvd//M7//6AP//+gD///oA///6AP/f4AoD3+AKA9/gCgPf4AoDlg/IB5YPyAeWD8gHlg/IB5YPyAeWD8gHlg/IB5YPyARMMCYYTDAmGEwwJhhMMCYaHgEgAh4BIAIeASACHgEgAAAD/fwAA/38AAP9/AAD/f/3/gHv9/4B7/f+Be/3/gHvo/95C6P/dQuf/3ULo/95C////f////3/+//9/////f/7//3/+//9/////f/7//3////9/////f////3////9/////f////3////9/////f//+gD///oA///6AP//+gD///oA///6AP//+gD///oA/////f////3////9/////f////3////9/////f////387CIlvOwiJbzsIiW87CIlvEYTYAxGE2AMRhNgDEYTYAwH2AHsB9gB7AfYAewH2AHvlg/IB5YPyAeWD8gHlg/IB")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_qaexx")
+
+[node name="default_tree_pixelated" unique_id=1476854968 instance=ExtResource("1_m401n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.060479403, 0)
+
+[node name="tree_leaves" parent="tmpParent" parent_id_path=PackedInt32Array(1285478652) index="0" unique_id=1335885964]
+surface_material_override/0 = SubResource("ShaderMaterial_c5jl6")
+
+[node name="tree_trunk" parent="tmpParent" parent_id_path=PackedInt32Array(1285478652) index="1" unique_id=2023686712]
+surface_material_override/0 = SubResource("ShaderMaterial_bs78j")
+
+[node name="default_tree_pixelated" type="Node3D" parent="." index="1" unique_id=490213840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94078696, 0, 0)
+
+[node name="tmpParent" type="Node3D" parent="default_tree_pixelated" index="0" unique_id=260183380]
+
+[node name="tree_leaves" type="MeshInstance3D" parent="default_tree_pixelated/tmpParent" index="0" unique_id=48657223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+mesh = SubResource("ArrayMesh_u4oq2")
+
+[node name="tree_trunk" type="MeshInstance3D" parent="default_tree_pixelated/tmpParent" index="1" unique_id=378942681]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
+mesh = SubResource("ArrayMesh_53b1w")

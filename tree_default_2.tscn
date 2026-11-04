@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://ch18s7pyj27dm"]
+
+[ext_resource type="PackedScene" uid="uid://dfuc24ds2lyp2" path="res://tree_default.glb" id="1_qv87t"]
+[ext_resource type="Material" uid="uid://bb5k1m02k6fbi" path="res://cel_shader/cel_material.tres" id="2_ol2ej"]
+
+[node name="tree_default2" unique_id=763469065 instance=ExtResource("1_qv87t")]
+
+[node name="tree_default" parent="." index="0" unique_id=1413985812]
+material_override = ExtResource("2_ol2ej")
